@@ -1,0 +1,53 @@
+{% extends "index.html" %}
+
+{% block title %}
+{{ post.title }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+    <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-8 mx-auto">
+
+            <!-- Category Badge -->
+            <span class="badge bg-primary mb-2">{{ post.category.catName }}</span>
+
+            <!-- Title -->
+            <h1 class="mb-3">{{ post.title }}</h1>
+
+            <!-- Author & Date -->
+            <p class="text-muted small mb-4">
+                By <strong>{{ post.author.username }}</strong>
+            </p>
+
+            <!-- Blog Content -->
+            <div class="mb-5">
+                {{ post.content|linebreaks }}
+            </div>
+
+            <!-- Back Button -->
+            <a href="{% url 'blog_list' %}" class="btn btn-outline-secondary">
+                ← Back to Blog List
+            </a>
+
+            <!-- Optional Related Posts -->
+            {% if related_posts %}
+            <div class="mt-5">
+                <h5>Related Posts</h5>
+                <ul class="list-group list-group-flush">
+                    {% for rel in related_posts %}
+                        <li class="list-group-item">
+                            <a href="{% url 'blog_detail' rel.id %}">{{ rel.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

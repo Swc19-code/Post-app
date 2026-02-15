@@ -14,6 +14,12 @@
             <!-- Category Badge -->
             <span class="badge bg-primary mb-2">{{ post.category.catName }}</span>
 
+            {% if post.image %}
+            <div class="">
+                <img class="img-fluid" src="{{ post.image.url }}" alt="Post-image">
+            </div>
+            {% endif %}
+
             <!-- Title -->
             <h1 class="mb-3">{{ post.title }}</h1>
 
@@ -21,6 +27,7 @@
             <p class="text-muted small mb-4">
                 By <strong>{{ post.author.username }}</strong>
             </p>
+            <p class="text-muted small mb-4">Created at: {{ post.created_at}}</p>
 
             <!-- Blog Content -->
             <div class="mb-5">

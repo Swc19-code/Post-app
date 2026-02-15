@@ -102,7 +102,7 @@ def my_post(request, pk):
 @login_required(login_url='login')
 def create_post(request):
     if request.method == "POST":
-        form = BlogForm(request.POST)
+        form = BlogForm(request.POST ,request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
@@ -113,10 +113,6 @@ def create_post(request):
         form = BlogForm()
     return render(request, "create_post.html", { "form": form})
 
-# @login_required(login_url='login')
-# def my_posts(request):
-#     posts = Blog.objects.filter(author = request.user).order_by("-id")
-#     return render(request, "my_posts.html", {"posts": posts})
 @login_required(login_url='login')
 def my_posts(request):
     posts = Blog.objects.filter(author = request.user).order_by("-id")
@@ -147,7 +143,7 @@ def edit_post(request, pk):
     post = get_object_or_404(Blog, pk=pk, author=request.user)
 
     if request.method == "POST":
-        form = BlogForm(request.POST, instance=post)
+        form = BlogForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             form.save()
             return redirect("my_posts")

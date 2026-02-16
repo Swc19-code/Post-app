@@ -35,6 +35,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR /'media'
 # Application definition
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -56,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -131,4 +134,7 @@ STATIC_URL = 'static/'
 STATIC_FILES_DIR = [
     BASE_DIR / 'static',
 ]
+# uncomment the line below for production
 # STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+

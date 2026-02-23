@@ -10,6 +10,8 @@ View all posts
 View single post detail
 Update posts
 Delete posts
+Pagination
+Filter by categories, content and title
 
 Django Templates for frontend rendering
 SQLite database (default)

@@ -1,6 +1,7 @@
 📌 Django Post App
 
 A simple blog-style Post application built with Django using Django Templates for rendering views. This project demonstrates basic CRUD functionality with server-side rendering.
+[http://](http://149.28.123.143/)
 ========================================================================
 🚀 Features
 

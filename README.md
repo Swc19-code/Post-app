@@ -25,26 +25,23 @@ SQLite (default Django DB)
 ========================================================================
 ⚙️ Installation & Setup
 1️⃣ Clone the repository
-git clone https://github.com/yourusername/django-post-app.git
+        git clone https://github.com/Swc19-code/Post-app.git
 cd django-post-app
 2️⃣ Create virtual environment
-python -m venv venv
+         python -m venv venv
 
 Activate it:
 
 Windows
-
-venv\Scripts\activate
+        venv\Scripts\activate
 
 Mac/Linux
-
-source venv/bin/activate
+        source venv/bin/activate
+        
 3️⃣ Install dependencies
 pip install -r requirements.txt
 
-If you don't have requirements.txt, install Django manually:
 
-pip install django
 4️⃣ Apply migrations
 python manage.py migrate
 5️⃣ Run the server
